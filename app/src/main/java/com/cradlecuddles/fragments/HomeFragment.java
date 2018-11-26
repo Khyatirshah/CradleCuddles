@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cradlecuddles.R;
+import com.cradlecuddles.foundation.BaseFragment;
 
 /**
  * Created by Khyati Shah on 11/19/2018.

@@ -16,7 +16,7 @@ public class Utils {
         FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
-        fragmentTransaction.add(android.R.id.content, fragment).commit();
+        fragmentTransaction.add(R.id.content_frame, fragment).commit();
 
     }
 }

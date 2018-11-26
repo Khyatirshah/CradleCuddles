@@ -3,4 +3,18 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#d81b60</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <!-- Card colors-->
+    <color name="colorCardBlue">#6699ff</color>
+    <color name="colorCardOrange">#ff9999</color>
+    <color name="colorCardGreen">#99ff99</color>
+    <color name="colorCardPurple">#e6ccff</color>
+    <color name="colorCardYellow">#ffcc66</color>
+    <color name="colorCardPink">#ffcce6</color>
+
+    <!-- Color navigation view-->
+
 </resources>

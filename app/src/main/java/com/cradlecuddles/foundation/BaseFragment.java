@@ -1,4 +1,4 @@
-package com.cradlecuddles.fragments;
+package com.cradlecuddles.foundation;
 
 import android.support.v4.app.Fragment;
 
