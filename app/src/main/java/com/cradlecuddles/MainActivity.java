@@ -1,17 +1,9 @@
 package com.cradlecuddles;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,19 +11,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.cradlecuddles.Utils.Utils;
 import com.cradlecuddles.adapters.NavigationAdapter;
-import com.cradlecuddles.fragments.HomeFragment;
+import com.cradlecuddles.fragments.ChildCareFragment;
+import com.cradlecuddles.fragments.ExtrasFragment;
+import com.cradlecuddles.fragments.MotherCareFragment;
+import com.cradlecuddles.fragments.SettingsFragment;
+import com.cradlecuddles.interfaces.NavigationItemListener;
 import com.cradlecuddles.models.NavigationItem;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationItemListener {
 
     private RelativeLayout rlContainar;
     RecyclerView mDrawerList;
@@ -59,13 +52,13 @@ public class MainActivity extends AppCompatActivity
        /* NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);*/
 
-        Utils.addFragment(this, new HomeFragment());
+        Utils.addFragment(this, new ChildCareFragment());
 
     }
 
     private void setNavigationDrawer() {
         NavigationItem navigationItem1 = new NavigationItem();
-        navigationItem1.setIconId(R.mipmap.ic_mothercare);
+        navigationItem1.setIconId(R.mipmap.ic_childcare);
         navigationItem1.setStrTitle("Child Care");
         navigationItems.add(navigationItem1);
 
@@ -74,7 +67,17 @@ public class MainActivity extends AppCompatActivity
         navigationItem2.setIconId(R.mipmap.ic_mothercare);
         navigationItems.add(navigationItem2);
 
-        navigationAdapter = new NavigationAdapter(navigationItems);
+        NavigationItem navigationItem3 = new NavigationItem();
+        navigationItem3.setStrTitle("Extras");
+        navigationItem3.setIconId(R.mipmap.ic_extras);
+        navigationItems.add(navigationItem3);
+
+        NavigationItem navigationItem4 = new NavigationItem();
+        navigationItem4.setStrTitle("Settings");
+        navigationItem4.setIconId(R.mipmap.ic_settings);
+        navigationItems.add(navigationItem4);
+
+        navigationAdapter = new NavigationAdapter(navigationItems, this);
         mDrawerList.setAdapter(navigationAdapter);
     }
 
@@ -111,28 +114,31 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    public void onNavigationItemClicked(int position) {
+        switch (position) {
+            case 0:
+                Utils.replaceFragment(this, new ChildCareFragment());
+                break;
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            case 1:
+                Utils.replaceFragment(this, new MotherCareFragment());
+                break;
 
-        } else if (id == R.id.nav_slideshow) {
+            case 2:
+                Utils.replaceFragment(this, new ExtrasFragment());
+                break;
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            case 3:
+                Utils.replaceFragment(this, new SettingsFragment());
+                break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 }
