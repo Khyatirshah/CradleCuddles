@@ -1,5 +1,6 @@
 package com.cradlecuddles;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
+import com.cradlecuddles.Utils.LanguageHelper;
 import com.cradlecuddles.Utils.Utils;
 import com.cradlecuddles.adapters.NavigationAdapter;
 import com.cradlecuddles.fragments.ChildCareFragment;
@@ -59,21 +61,21 @@ public class MainActivity extends AppCompatActivity implements NavigationItemLis
     private void setNavigationDrawer() {
         NavigationItem navigationItem1 = new NavigationItem();
         navigationItem1.setIconId(R.mipmap.ic_childcare);
-        navigationItem1.setStrTitle("Child Care");
+        navigationItem1.setStrTitle(getString(R.string.ChildCare));
         navigationItems.add(navigationItem1);
 
         NavigationItem navigationItem2 = new NavigationItem();
-        navigationItem2.setStrTitle("Mother Care");
+        navigationItem2.setStrTitle(getString(R.string.MotherCare));
         navigationItem2.setIconId(R.mipmap.ic_mothercare);
         navigationItems.add(navigationItem2);
 
         NavigationItem navigationItem3 = new NavigationItem();
-        navigationItem3.setStrTitle("Extras");
+        navigationItem3.setStrTitle(getString(R.string.Extras));
         navigationItem3.setIconId(R.mipmap.ic_extras);
         navigationItems.add(navigationItem3);
 
         NavigationItem navigationItem4 = new NavigationItem();
-        navigationItem4.setStrTitle("Settings");
+        navigationItem4.setStrTitle(getString(R.string.Settings));
         navigationItem4.setIconId(R.mipmap.ic_settings);
         navigationItems.add(navigationItem4);
 
@@ -91,29 +93,10 @@ public class MainActivity extends AppCompatActivity implements NavigationItemLis
         }
     }
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LanguageHelper.onAttach(base));
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 
     @Override
     public void onNavigationItemClicked(int position) {

@@ -1,11 +1,17 @@
 package com.cradlecuddles.Utils;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
+import com.cradlecuddles.MainActivity;
 import com.cradlecuddles.R;
+
+import java.util.Locale;
 
 /**
  * Created by Khyati Shah on 11/19/2018.
@@ -25,4 +31,5 @@ public class Utils {
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.content_frame, fragment).commit();
     }
+
 }

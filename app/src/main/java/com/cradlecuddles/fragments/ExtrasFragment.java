@@ -19,7 +19,7 @@ public class ExtrasFragment extends BaseFragment {
         super.onResume();
         // Set title bar
         ((MainActivity) getActivity())
-                .setActionBarTitle("Extras");
+                .setActionBarTitle(getString(R.string.Extras));
     }
 
     @Override

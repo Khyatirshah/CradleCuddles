@@ -4,12 +4,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- General Text-->
+    <string name="OK">Ok</string>
+    <string name="Cancel">Cancel</string>
 
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-    </string-array>
+    <!-- Screen titles-->
+    <string name="ChildCare">Child Care</string>
+    <string name="MotherCare">Mother Care</string>
+    <string name="Extras">Extras</string>
+    <string name="Settings">Settings</string>
+
+    <!-- Settings Screen-->
+    <string name="ChangeLanguage">Change Language</string>
+    <string name="SelectLanguage">Select Language</string>
+    <string name="Hindi">Hindi</string>
+    <string name="English">English</string>
+
 </resources>

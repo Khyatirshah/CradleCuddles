@@ -10,6 +10,7 @@
     <dimen name="card_radius">5dp</dimen>
     <dimen name="card_elevation">5dp</dimen>
     <dimen name="card_margin">20dp</dimen>
+    <dimen name="card_height">150dp</dimen>
 
     <!-- Text Sizes-->
     <dimen name="text_15sp">15sp</dimen>

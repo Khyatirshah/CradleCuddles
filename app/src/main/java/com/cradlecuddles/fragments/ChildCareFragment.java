@@ -18,7 +18,7 @@ public class ChildCareFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         ((MainActivity) getActivity())
-                .setActionBarTitle("Child Care");
+                .setActionBarTitle(getString(R.string.ChildCare));
     }
 
     @Override

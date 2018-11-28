@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CradleCuddles</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- General Text-->
+    <string name="OK">ठीक</string>
+    <string name="Cancel">रद्द करें</string>
+
+    <!-- Screen titles-->
+    <string name="ChildCare">चाइल्ड केयर</string>
+    <string name="MotherCare">मदर केयर</string>
+    <string name="Extras">अतिरिक्त</string>
+    <string name="Settings">सेटिंग्स</string>
+
+    <!-- Settings Screen-->
+    <string name="ChangeLanguage">भाषा बदलो</string>
+    <string name="SelectLanguage">भाषा चुनिए</string>
+    <string name="Hindi">हिंदी</string>
+    <string name="English">अंग्रेज़ी</string>
+</resources>

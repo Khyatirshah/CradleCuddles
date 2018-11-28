@@ -3,15 +3,18 @@
     <!-- Theme colors-->
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#d81b60</color>
+    <color name="colorAccent">@android:color/darker_gray</color>
     <color name="colorText">@android:color/darker_gray</color>
 
 
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorGray">#80878A</color>
+    <!-- <color name="colorGray">#80878A</color>-->
     <color name="colorBlack">#000000</color>
+    <color name="colorBackgroundGray">#d9d9d9</color>
+
     <!-- Card colors-->
-    <color name="colorCardBlue">#6699ff</color>
+    <!-- <color name="colorCardBlue">#6699ff</color>-->
+    <color name="colorCardBlue">#ccddff</color>
     <color name="colorCardOrange">#ff9999</color>
     <color name="colorCardGreen">#99ff99</color>
     <color name="colorCardPurple">#e6ccff</color>

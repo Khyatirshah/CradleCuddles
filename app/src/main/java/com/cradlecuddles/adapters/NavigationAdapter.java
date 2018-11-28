@@ -54,7 +54,7 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.My
             }
         });
         if (position == selectedIndex) {
-            holder.llParent.setBackgroundColor(ContextCompat.getColor(context, R.color.colorText));
+            holder.llParent.setBackgroundColor(ContextCompat.getColor(context, R.color.colorBackgroundGray));
             holder.txtTitle.setTextColor(ContextCompat.getColor(context, R.color.colorWhite));
         } else {
             holder.llParent.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));

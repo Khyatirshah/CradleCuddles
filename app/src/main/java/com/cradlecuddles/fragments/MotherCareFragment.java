@@ -19,7 +19,7 @@ public class MotherCareFragment extends BaseFragment {
         super.onResume();
 
         ((MainActivity) getActivity())
-                .setActionBarTitle("Mother Care");
+                .setActionBarTitle(getString(R.string.MotherCare));
     }
 
     @Override
