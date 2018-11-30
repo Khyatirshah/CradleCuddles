@@ -20,4 +20,21 @@
     <string name="SelectLanguage">भाषा चुनिए</string>
     <string name="Hindi">हिंदी</string>
     <string name="English">अंग्रेज़ी</string>
+
+    <!-- Childcare Fragment-->
+    <string name="Vaccination">टीका</string>
+    <string name="Diet">आहार</string>
+    <string name="GrowthEvaluation">विकास मूल्यांकन</string>
+    <string name="Massage">मालिश</string>
+    <string name="Cleanliness">स्वच्छता</string>
+    <string name="CategorisedCare">वर्गीकृत देखभाल</string>
+    <string name="FirstAid">प्राथमिक चिकित्सा</string>
+
+    <!-- Mothercare Fragment-->
+    <string name="Profile">प्रोफाइल</string>
+    <string name="WorkingWomanCare">कामकाजी महिलाओं की देखभाल</string>
+    <string name="WeightManagement">वजन प्रबंधन</string>
+    <string name="MoodObservation">मनोदशा अवलोकन</string>
+    <string name="KickCount">किक गिनती</string>
+    <string name="PostnatalKit">प्रसवोत्तर किट</string>
 </resources>

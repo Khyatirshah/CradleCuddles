@@ -20,4 +20,21 @@
     <string name="Hindi">Hindi</string>
     <string name="English">English</string>
 
+    <!-- Childcare Fragment-->
+    <string name="Vaccination">Vaccination</string>
+    <string name="Diet">Diet</string>
+    <string name="GrowthEvaluation">Growth evaluation</string>
+    <string name="Massage">Massage</string>
+    <string name="Cleanliness">Cleanliness</string>
+    <string name="CategorisedCare">Categorised care</string>
+    <string name="FirstAid">First aid</string>
+
+
+    <!-- Mothercare Fragment-->
+    <string name="Profile">Profile</string>
+    <string name="WorkingWomanCare">Working woman care</string>
+    <string name="WeightManagement">Weight management</string>
+    <string name="MoodObservation">Mood observation</string>
+    <string name="KickCount">Kick count</string>
+    <string name="PostnatalKit">postnatal kit</string>
 </resources>

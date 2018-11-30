@@ -13,13 +13,12 @@
     <color name="colorBackgroundGray">#d9d9d9</color>
 
     <!-- Card colors-->
-    <!-- <color name="colorCardBlue">#6699ff</color>-->
     <color name="colorCardBlue">#ccddff</color>
-    <color name="colorCardOrange">#ff9999</color>
-    <color name="colorCardGreen">#99ff99</color>
-    <color name="colorCardPurple">#e6ccff</color>
-    <color name="colorCardYellow">#ffcc66</color>
-    <color name="colorCardPink">#ffcce6</color>
+    <color name="colorCardOrange">#ffcccc</color>
+    <color name="colorCardGreen">#ccffcc</color>
+    <color name="colorCardPurple">#f3e6ff</color>
+    <color name="colorCardYellow">#ffdd99</color>
+    <color name="colorCardPink">#ffe6f3</color>
 
     <!-- Color navigation view-->
 

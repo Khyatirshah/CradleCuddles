@@ -14,5 +14,6 @@
 
     <!-- Text Sizes-->
     <dimen name="text_15sp">15sp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
 
 </resources>

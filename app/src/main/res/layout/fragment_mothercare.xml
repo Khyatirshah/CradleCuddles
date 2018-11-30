@@ -26,31 +26,31 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
-                    android:id="@+id/llLanguage"
+                    android:id="@+id/llProfile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imgIcon"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/ic_language" />
+                        android:src="@mipmap/ic_mother_profile" />
 
                     <TextView
-                        android:id="@+id/txtTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:layout_marginRight="10dp"
                         android:gravity="center"
-                        android:text="@string/ChangeLanguage"
+                        android:text="@string/Profile"
                         android:textColor="@color/colorText"
-                        android:textSize="@dimen/text_15sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -65,9 +65,31 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
+                    android:id="@+id/llWorkingWomenCare"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_workingwoman" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="@string/WorkingWomanCare"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
@@ -90,9 +112,30 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
+                    android:id="@+id/llWeightManagement"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_weight_management" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="@string/WeightManagement"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -106,9 +149,30 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
+                    android:id="@+id/llModdObservation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_mood" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="@string/MoodObservation"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
@@ -130,9 +194,30 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
+                    android:id="@+id/llKickCount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_kick" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="@string/KickCount"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -147,9 +232,30 @@
                 card_view:cardCornerRadius="@dimen/card_radius">
 
                 <LinearLayout
+                    android:id="@+id/llPostnatalKit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_postnatal_kit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="@string/PostnatalKit"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
