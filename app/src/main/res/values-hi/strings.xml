@@ -37,4 +37,25 @@
     <string name="MoodObservation">मनोदशा अवलोकन</string>
     <string name="KickCount">किक गिनती</string>
     <string name="PostnatalKit">प्रसवोत्तर किट</string>
+
+    <!-- Vaccination Fragment -->
+    <string name="SelectAge">बच्चे की उम्र का चयन करें</string>
+    <string name="ShowVaccinations">टीकाकरण दिखाएं</string>
+
+    <array name="age">
+        <item>Birth</item>
+        <item>6 weeks</item>
+        <item>10 weeks</item>
+        <item>14 weeks</item>
+        <item>6 months</item>
+        <item>9 months</item>
+        <item>9 – 12 months</item>
+        <item>12 months</item>
+        <item>15 months</item>
+        <item>16 to 18 months</item>
+        <item>18 months</item>
+        <item>2 years</item>
+        <item>4 to 6 years</item>
+        <item>10 to 12 years</item>
+    </array>
 </resources>

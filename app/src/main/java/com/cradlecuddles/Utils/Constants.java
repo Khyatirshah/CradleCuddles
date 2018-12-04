@@ -7,6 +7,6 @@ public class Constants {
 
     public static final String ENG = "en";
     public static final String HINDI = "hi";
-
+    public static final String TABLE_VACCINATION = "Vaccination";
 
 }

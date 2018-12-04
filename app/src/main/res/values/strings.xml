@@ -37,4 +37,24 @@
     <string name="MoodObservation">Mood observation</string>
     <string name="KickCount">Kick count</string>
     <string name="PostnatalKit">postnatal kit</string>
+
+    <!-- Vaccination Fragment -->
+    <string name="SelectAge">Select child\'s age</string>
+    <string name="ShowVaccinations">Show vaccinations</string>
+    <array name="age">
+        <item>Birth</item>
+        <item>6 weeks</item>
+        <item>10 weeks</item>
+        <item>14 weeks</item>
+        <item>6 months</item>
+        <item>9 months</item>
+        <item>9 – 12 months</item>
+        <item>12 months</item>
+        <item>15 months</item>
+        <item>16 to 18 months</item>
+        <item>18 months</item>
+        <item>2 years</item>
+        <item>4 to 6 years</item>
+        <item>10 to 12 years</item>
+    </array>
 </resources>
