@@ -39,10 +39,11 @@
     <string name="PostnatalKit">प्रसवोत्तर किट</string>
 
     <!-- Vaccination Fragment -->
-    <string name="SelectAge">बच्चे की उम्र का चयन करें</string>
+    <!--<string name="SelectAge">बच्चे की उम्र का चयन करें</string>-->
     <string name="ShowVaccinations">टीकाकरण दिखाएं</string>
 
     <array name="age">
+        <item>Select child\'s age</item>
         <item>Birth</item>
         <item>6 weeks</item>
         <item>10 weeks</item>
@@ -58,4 +59,9 @@
         <item>4 to 6 years</item>
         <item>10 to 12 years</item>
     </array>
+    <string name="ContentTag">सामग्री टैग</string>
+    <string name="ApproxPrice">लगभग मूल्य</string>
+    <string name="Doses">खुराक</string>
+    <string name="MarkDone">इसे चिह्नित करें</string>
+    <string name="AddReminder">अनुस्मारक डालें</string>
 </resources>

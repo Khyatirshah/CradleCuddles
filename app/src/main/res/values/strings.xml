@@ -39,9 +39,10 @@
     <string name="PostnatalKit">postnatal kit</string>
 
     <!-- Vaccination Fragment -->
-    <string name="SelectAge">Select child\'s age</string>
+    <!--<string name="SelectAge">Select child\'s age</string>-->
     <string name="ShowVaccinations">Show vaccinations</string>
     <array name="age">
+        <item>Select child\'s age</item>
         <item>Birth</item>
         <item>6 weeks</item>
         <item>10 weeks</item>
@@ -57,4 +58,9 @@
         <item>4 to 6 years</item>
         <item>10 to 12 years</item>
     </array>
+    <string name="ContentTag">Content Tag</string>
+    <string name="ApproxPrice">Approx Price</string>
+    <string name="Doses">Doses</string>
+    <string name="MarkDone">Mark it done</string>
+    <string name="AddReminder">Add reminder</string>
 </resources>

@@ -10,4 +10,5 @@ class Vaccination {
     var doses: Int = 0
     var contentTag: String = ""
     var approxPrice: String = ""
+    var isDone: Int = 0
 }

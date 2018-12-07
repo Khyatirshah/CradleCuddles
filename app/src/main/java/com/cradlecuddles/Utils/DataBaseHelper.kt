@@ -28,7 +28,6 @@ class DataBaseHelper
 (private val myContext: Context) : SQLiteOpenHelper(myContext, DB_NAME, null, 1) {
 
 
-
     private var myDataBase: SQLiteDatabase? = null
 
 
@@ -151,10 +150,11 @@ class DataBaseHelper
 
     }
 
-    fun getVaccinations(age: String) {
+    fun getVaccinations(age: String): ArrayList<Vaccination> {
+        val vaccinations = ArrayList<Vaccination>()
         try {
             // String q = "SELECT name from " + Constants.TABLE_VACCINATION + " WHERE Age ='" + age + "' ";
-            val vaccinations = ArrayList<Vaccination>()
+
             myDataBase = readableDatabase
             val cursor = myDataBase!!.query(Constants.TABLE_VACCINATION, null,
                     "Age" + "=?",
@@ -162,13 +162,27 @@ class DataBaseHelper
             if (cursor != null) {
                 cursor.moveToFirst()
                 for (i in 0 until cursor.count) {
-
+                    var tempVacc = Vaccination()
+                    tempVacc.vaccName = cursor.getString(0)
+                    tempVacc.age = cursor.getString(1)
+                    tempVacc.approxPrice = cursor.getString(4)
+                    tempVacc.contentTag = cursor.getString(3)
+                    tempVacc.doses = cursor.getInt(2)
+                    tempVacc.isDone = cursor.getInt(5)
+                    vaccinations.add(tempVacc)
+                    cursor.moveToNext()
                 }
             }
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
+        return vaccinations
+    }
 
+    fun updateIsDone(vaccName: String, isDone: Int) {
+        myDataBase = writableDatabase
+        
     }
 
     companion object {
