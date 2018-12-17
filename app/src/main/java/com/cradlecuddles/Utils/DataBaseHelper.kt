@@ -6,6 +6,9 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 
 import com.cradlecuddles.models.Vaccination
 
@@ -13,6 +16,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
+import java.sql.Blob
 import java.util.ArrayList
 
 /**
@@ -182,7 +186,57 @@ class DataBaseHelper
 
     fun updateIsDone(vaccName: String, isDone: Int) {
         myDataBase = writableDatabase
-        
+        val strSQL = "UPDATE " + Constants.TABLE_VACCINATION + " SET IsDone = $isDone WHERE VaccName = '$vaccName'"
+        myDataBase!!.execSQL(strSQL)
+    }
+
+    fun getChildProfileImage(): Bitmap? {
+
+        myDataBase = readableDatabase
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+
+        if (cursor != null && cursor.count > 0) {
+            cursor.moveToFirst()
+            var imgByte = cursor.getString(6)
+            val bytarray = Base64.decode(imgByte, Base64.DEFAULT)
+            val bmimage = BitmapFactory.decodeByteArray(bytarray, 0,
+                    bytarray.size)
+            //return BitmapFactory.decodeByteArray(imgByte, 0, imgByte.size)
+            return bmimage
+            cursor!!.close()
+        }
+        return null
+    }
+
+    fun setChildProfileImage(bitmapImage: Bitmap) {
+        myDataBase = writableDatabase
+        var byteImage = Utils.getBitmapAsByteArray(bitmapImage)
+
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        var strSQL: String
+        if (cursor != null && cursor.count > 0) {
+            strSQL = "UPDATE " + Constants.TABLE_BABY_PROFILE + " SET profile_image = '$byteImage'"
+        } else {
+            strSQL = "INSERT OR REPLACE INTO " + Constants.TABLE_BABY_PROFILE + " ('profile_image') Values ('$byteImage')"
+        }
+
+        myDataBase!!.execSQL(strSQL)
+    }
+
+    fun removeChildProfileImage() {
+        myDataBase = writableDatabase
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        var strSQL: String
+        if (cursor != null && cursor.count > 0) {
+            strSQL = "UPDATE " + Constants.TABLE_BABY_PROFILE + " SET profile_image = ''"
+        } else {
+            strSQL = "INSERT OR REPLACE INTO " + Constants.TABLE_BABY_PROFILE + " ('profile_image') Values ('')"
+        }
+
+        myDataBase!!.execSQL(strSQL)
     }
 
     companion object {

@@ -14,6 +14,7 @@
     <string name="MotherCare">मदर केयर</string>
     <string name="Extras">अतिरिक्त</string>
     <string name="Settings">सेटिंग्स</string>
+    <string name="ChildProfile">बच्चे की प्रोफाइल</string>
 
     <!-- Settings Screen-->
     <string name="ChangeLanguage">भाषा बदलो</string>
@@ -64,4 +65,22 @@
     <string name="Doses">खुराक</string>
     <string name="MarkDone">इसे चिह्नित करें</string>
     <string name="AddReminder">अनुस्मारक डालें</string>
+
+    <!-- Profile screen -->
+    <string name="Name">नाम</string>
+    <string name="Gender">लिंग</string>
+    <string name="DateOfBirth">जन्म की तारीख</string>
+    <string name="TimeOfBirth">जन्म का समय</string>
+    <string name="Weight">वजन</string>
+    <string name="Height">ऊंचाई</string>
+    <string name="BloodGroup">रक्त समूह</string>
+    <string name="Gallery">गेलरी</string>
+    <string name="Camera">कैमरा</string>
+    <string name="RemovePhoto">फोटो हटाएं</string>
+
+    <array name="gender">
+        <item>पुरुष</item>
+        <item>महिला</item>
+        <item>अन्य</item>
+    </array>
 </resources>

@@ -13,6 +13,7 @@
     <string name="MotherCare">Mother Care</string>
     <string name="Extras">Extras</string>
     <string name="Settings">Settings</string>
+    <string name="ChildProfile">Child Profile</string>
 
     <!-- Settings Screen-->
     <string name="ChangeLanguage">Change Language</string>
@@ -63,4 +64,22 @@
     <string name="Doses">Doses</string>
     <string name="MarkDone">Mark it done</string>
     <string name="AddReminder">Add reminder</string>
+
+    <!-- Profile screen -->
+    <string name="Name">Name</string>
+    <string name="Gender">Gender</string>
+    <string name="DateOfBirth">Date of birth</string>
+    <string name="TimeOfBirth">Time of birth</string>
+    <string name="Weight">Weight</string>
+    <string name="Height">Height</string>
+    <string name="BloodGroup">Blood Group</string>
+    <string name="Gallery">Gallery</string>
+    <string name="Camera">Camera</string>
+    <string name="RemovePhoto">Remove photo</string>
+
+    <array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </array>
 </resources>

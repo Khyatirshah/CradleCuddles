@@ -8,5 +8,5 @@ object Constants {
     val ENG = "en"
     val HINDI = "hi"
     val TABLE_VACCINATION = "Vaccination"
-
+    val TABLE_BABY_PROFILE = "BabyProfile"
 }

@@ -10,6 +10,7 @@ import com.cradlecuddles.MainActivity
 import com.cradlecuddles.R
 import com.cradlecuddles.Utils.Utils
 import com.cradlecuddles.foundation.BaseFragment
+import kotlinx.android.synthetic.main.fragment_childcare.*
 
 /**
  * Created by Khyati Shah on 11/19/2018.
@@ -34,6 +35,8 @@ class ChildCareFragment : BaseFragment(), View.OnClickListener {
         val view = inflater!!.inflate(R.layout.fragment_childcare, container, false)
         llVaccination = view.findViewById(R.id.llVaccination)
         llVaccination!!.setOnClickListener(this)
+        val llProfile = view.findViewById<LinearLayout>(R.id.llProfile)
+        llProfile!!.setOnClickListener(this)
         return view
     }
 
@@ -41,6 +44,9 @@ class ChildCareFragment : BaseFragment(), View.OnClickListener {
         when (view.id) {
 
             R.id.llVaccination -> Utils.addSubscreen(activity, VaccinationFragment())
+
+            R.id.llProfile -> Utils.addSubscreen(activity, BabyProfileFragment())
+
         }
     }
 }

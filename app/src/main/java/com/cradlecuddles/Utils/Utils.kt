@@ -12,6 +12,12 @@ import com.cradlecuddles.MainActivity
 import com.cradlecuddles.R
 
 import java.util.Locale
+import android.graphics.Bitmap.CompressFormat
+import android.graphics.Bitmap
+import java.io.ByteArrayOutputStream
+import android.graphics.BitmapFactory
+import android.util.Base64
+
 
 /**
  * Created by Khyati Shah on 11/19/2018.
@@ -39,5 +45,17 @@ object Utils {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.content_frame, fragment).commit()
     }
+
+    fun getBitmapAsByteArray(bitmap: Bitmap): String {
+        /* val outputStream = ByteArrayOutputStream()
+         bitmap.compress(CompressFormat.PNG, 0, outputStream)
+         return outputStream.toByteArray()*/
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val b = baos.toByteArray()
+        var encodedImageString = Base64.encodeToString(b, Base64.DEFAULT)
+        return encodedImageString
+    }
+
 
 }
