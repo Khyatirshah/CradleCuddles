@@ -11,26 +11,123 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="@dimen/margin_10dp">
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/edtName"
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
                 android:layout_marginLeft="@dimen/card_margin"
                 android:layout_marginTop="@dimen/card_margin"
                 android:layout_marginRight="@dimen/card_margin"
-                android:hint="@string/Name" />
+                android:hint="@string/Name"
+                android:textSize="@dimen/text_12sp" />
 
 
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/card_margin"
+                android:id="@+id/spinnerGender"
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="@dimen/card_margin"
                 android:layout_marginRight="@dimen/card_margin"
-                android:entries="@array/gender" />
+                android:entries="@array/gender"
+                android:textSize="@dimen/text_12sp" />
 
+            <RelativeLayout
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+
+                android:layout_marginTop="@dimen/card_margin"
+
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/edtDOB"
+                    android:layout_width="@dimen/edit_text_small_width"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="7dp"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/DateOfBirth"
+                    android:textSize="@dimen/text_12sp" />
+
+                <ImageView
+                    android:id="@+id/imgDatePicker"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/ic_calender" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginTop="@dimen/card_margin"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/edtTOB"
+                    android:layout_width="@dimen/edit_text_small_width"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="7dp"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/TimeOfBirth"
+                    android:textSize="@dimen/text_12sp" />
+
+                <ImageView
+                    android:id="@+id/imgTimePicker"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/ic_clock" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnOk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorBackgroundGray"
+                    android:text="@string/OK"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_12sp" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorBackgroundGray"
+                    android:text="@string/Cancel"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_12sp" />
+
+            </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

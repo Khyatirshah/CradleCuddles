@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
-        android:entries="@array/age"/>
-        <!--android:prompt="@string/SelectAge" -->
+        android:entries="@array/age" />
+    <!--android:prompt="@string/SelectAge" -->
 
     <Button
         android:id="@+id/btnShowVaccinations"
@@ -21,7 +21,8 @@
         android:layout_marginRight="@dimen/card_margin"
         android:background="@color/colorBackgroundGray"
         android:text="@string/ShowVaccinations"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_12sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lstVaccination"

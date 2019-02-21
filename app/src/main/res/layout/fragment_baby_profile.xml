@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
 
         <FrameLayout
             android:id="@+id/rlImageContainar"
@@ -42,8 +44,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            card_view:cardBackgroundColor="@color/colorCardPurple">
+            card_view:cardBackgroundColor="@color/colorCardBlue">
 
+            <!-- Name field-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,14 +153,15 @@
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/text_12sp" />
 
-                    <ImageView
-                        android:id="@+id/imgBasicInfoEdit"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="bottom|right"
-                        android:layout_marginTop="5dp"
-                        android:src="@mipmap/ic_edit" />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgBasicInfoEdit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="5dp"
+                    android:src="@mipmap/ic_edit" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -168,7 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cardBasicDetails"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardBackgroundColor="@color/colorCardPurple">
+            card_view:cardBackgroundColor="@color/colorCardYellow">
 
             <LinearLayout
                 android:layout_width="match_parent"

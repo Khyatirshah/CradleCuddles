@@ -1,7 +1,6 @@
-package com.cradlecuddles.Utils
+package com.cradlecuddles.db
 
 import android.content.Context
-import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
@@ -9,14 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import com.cradlecuddles.Utils.Constants
+import com.cradlecuddles.Utils.Utils
+import com.cradlecuddles.models.BabyBasicDetails
 
 import com.cradlecuddles.models.Vaccination
 
 import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
-import java.sql.Blob
 import java.util.ArrayList
 
 /**
@@ -199,11 +198,13 @@ class DataBaseHelper
         if (cursor != null && cursor.count > 0) {
             cursor.moveToFirst()
             var imgByte = cursor.getString(6)
-            val bytarray = Base64.decode(imgByte, Base64.DEFAULT)
-            val bmimage = BitmapFactory.decodeByteArray(bytarray, 0,
-                    bytarray.size)
-            //return BitmapFactory.decodeByteArray(imgByte, 0, imgByte.size)
-            return bmimage
+            if(imgByte != null) {
+                val bytarray = Base64.decode(imgByte, Base64.DEFAULT)
+                val bmimage = BitmapFactory.decodeByteArray(bytarray, 0,
+                        bytarray.size)
+                //return BitmapFactory.decodeByteArray(imgByte, 0, imgByte.size)
+                return bmimage
+            }
             cursor!!.close()
         }
         return null
@@ -237,6 +238,35 @@ class DataBaseHelper
         }
 
         myDataBase!!.execSQL(strSQL)
+    }
+
+    fun setBabyBasics(babyBasicDetails: BabyBasicDetails) {
+        myDataBase = writableDatabase
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        var strSQL: String
+        if (cursor != null && cursor.count > 0) {
+            strSQL = "UPDATE " + Constants.TABLE_BABY_PROFILE + " SET name = '${babyBasicDetails.name}', gender = '${babyBasicDetails.gender}', date_of_birth = '${babyBasicDetails.DOB}', time_of_birth = '${babyBasicDetails.TOD}'"
+        } else {
+            strSQL = "INSERT OR REPLACE INTO " + Constants.TABLE_BABY_PROFILE + " ('name', 'gender', 'date_of_birth', 'time_of_birth') Values ('${babyBasicDetails.name}','${babyBasicDetails.gender}', '${babyBasicDetails.DOB}','${babyBasicDetails.TOD}')"
+        }
+
+        myDataBase!!.execSQL(strSQL)
+    }
+
+    fun getBabyBasics() : BabyBasicDetails? {
+        var babyBasicDetails : BabyBasicDetails ?= null
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+       if(cursor.count > 0) {
+           babyBasicDetails =  BabyBasicDetails()
+           cursor.moveToFirst()
+           babyBasicDetails.name = cursor.getString(0)
+           babyBasicDetails.gender = cursor.getString(1)
+           babyBasicDetails.DOB = cursor.getString(2)
+           babyBasicDetails.TOD = cursor.getString(3)
+       }
+        return  babyBasicDetails
     }
 
     companion object {

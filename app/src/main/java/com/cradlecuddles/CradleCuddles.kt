@@ -2,7 +2,7 @@ package com.cradlecuddles
 
 import android.app.Application
 
-import com.cradlecuddles.Utils.DataBaseHelper
+import com.cradlecuddles.db.DataBaseHelper
 
 /**
  * Created by Khyati Shah on 12/3/2018.
