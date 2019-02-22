@@ -11,6 +11,7 @@ import android.util.Base64
 import com.cradlecuddles.Utils.Constants
 import com.cradlecuddles.Utils.Utils
 import com.cradlecuddles.models.BabyBasicDetails
+import com.cradlecuddles.models.BabyBodyDetails
 
 import com.cradlecuddles.models.Vaccination
 
@@ -197,8 +198,8 @@ class DataBaseHelper
 
         if (cursor != null && cursor.count > 0) {
             cursor.moveToFirst()
-            var imgByte = cursor.getString(6)
-            if(imgByte != null) {
+            var imgByte = cursor.getString(7)
+            if (imgByte != null) {
                 val bytarray = Base64.decode(imgByte, Base64.DEFAULT)
                 val bmimage = BitmapFactory.decodeByteArray(bytarray, 0,
                         bytarray.size)
@@ -254,20 +255,53 @@ class DataBaseHelper
         myDataBase!!.execSQL(strSQL)
     }
 
-    fun getBabyBasics() : BabyBasicDetails? {
-        var babyBasicDetails : BabyBasicDetails ?= null
+    fun setBabyBody(babyBodyDetails: BabyBodyDetails) {
+        myDataBase = writableDatabase
         val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
         val cursor = myDataBase!!.rawQuery(qu, null)
-       if(cursor.count > 0) {
-           babyBasicDetails =  BabyBasicDetails()
-           cursor.moveToFirst()
-           babyBasicDetails.name = cursor.getString(0)
-           babyBasicDetails.gender = cursor.getString(1)
-           babyBasicDetails.DOB = cursor.getString(2)
-           babyBasicDetails.TOD = cursor.getString(3)
-       }
-        return  babyBasicDetails
+        var strSQL: String
+        if (cursor != null && cursor.count > 0) {
+            strSQL = "UPDATE " + Constants.TABLE_BABY_PROFILE + " SET height = '${babyBodyDetails.height}', weight = '${babyBodyDetails.weight}', blood_group = '${babyBodyDetails.bloodGroup}'"
+        } else {
+            strSQL = "INSERT OR REPLACE INTO " + Constants.TABLE_BABY_PROFILE + " ('height', 'weight', 'blood_group') Values ('${babyBodyDetails.height}','${babyBodyDetails.weight}', '${babyBodyDetails.bloodGroup}')"
+        }
+
+        myDataBase!!.execSQL(strSQL)
     }
+
+    fun getBabyBasics(): BabyBasicDetails? {
+        var babyBasicDetails: BabyBasicDetails? = null
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        if (cursor.count > 0) {
+            cursor.moveToFirst()
+            if (cursor.getString(0) != null) {
+                babyBasicDetails = BabyBasicDetails()
+                babyBasicDetails.name = cursor.getString(0)
+                babyBasicDetails.gender = cursor.getString(1)
+                babyBasicDetails.DOB = cursor.getString(2)
+                babyBasicDetails.TOD = cursor.getString(3)
+            }
+        }
+        return babyBasicDetails
+    }
+
+    fun getBabyBody(): BabyBodyDetails? {
+        var babyBodyDetails: BabyBodyDetails? = null
+        val qu = "select *  from " + Constants.TABLE_BABY_PROFILE
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        if (cursor.count > 0) {
+            cursor.moveToFirst()
+            if (cursor.getString(4) != null) {
+                babyBodyDetails = BabyBodyDetails()
+                babyBodyDetails.height = cursor.getString(4).toDouble()
+                babyBodyDetails.weight = cursor.getString(5).toDouble()
+                babyBodyDetails.bloodGroup = cursor.getString(6)
+            }
+        }
+        return babyBodyDetails
+    }
+
 
     companion object {
 

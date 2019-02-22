@@ -83,4 +83,12 @@
         <item>महिला</item>
         <item>अन्य</item>
     </array>
+
+    <!-- Error Messages-->
+    <string name="PleaseEnterWeight">कृपया वजन दर्ज करें</string>
+    <string name="PleaseEnterHeight">कृपया ऊंचाई दर्ज करें</string>
+    <string name="PleaseEnterBloodGroup">कृपया ब्लड ग्रुप डालें</string>
+    <string name="PleaseEnterName">कृपया नाम दर्ज करें</string>
+    <string name="PleaseSelectDateofBirth">कृपया जन्म तिथि चुनें</string>
+    <string name="PleaseSelectTimeofBirth">कृपया समय का चयन करें</string>
 </resources>

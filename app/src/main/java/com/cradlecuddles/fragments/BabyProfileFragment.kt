@@ -34,6 +34,7 @@ import android.widget.*
 import com.cradlecuddles.Utils.Constants
 import com.cradlecuddles.db.DataBaseHelper
 import com.cradlecuddles.models.BabyBasicDetails
+import com.cradlecuddles.models.BabyBodyDetails
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -44,13 +45,16 @@ import java.util.*
 class BabyProfileFragment : BaseFragment(), View.OnClickListener {
 
     var imgProfileEdit: ImageView? = null
-    lateinit var imgBodyEdit : ImageView
+    lateinit var imgBodyEdit: ImageView
     var profile_image: ImageView? = null
     var imgBasicInfoEdit: ImageView? = null
     lateinit var valName: TextView
     lateinit var valGender: TextView
     lateinit var valDOB: TextView
     lateinit var valTimeOfBirth: TextView
+    lateinit var valWeight: TextView
+    lateinit var valHeight: TextView
+    lateinit var valBloodGroup: TextView
 
     private val GALLERY = 1
     private val CAMERA = 2
@@ -77,6 +81,9 @@ class BabyProfileFragment : BaseFragment(), View.OnClickListener {
         valGender = view.findViewById(R.id.valGender)
         valDOB = view.findViewById(R.id.valDOB)
         valTimeOfBirth = view.findViewById(R.id.valTimeOfBirth)
+        valHeight = view.findViewById(R.id.valHeight)
+        valWeight = view.findViewById(R.id.valWeight)
+        valBloodGroup = view.findViewById(R.id.valBloodGroup)
 
         imgProfileEdit!!.setOnClickListener(this)
         imgBasicInfoEdit!!.setOnClickListener(this)
@@ -98,6 +105,12 @@ class BabyProfileFragment : BaseFragment(), View.OnClickListener {
             valDOB.text = babyBasicDetails.DOB
             valTimeOfBirth.text = babyBasicDetails.TOD
         }
+        var babyBodyDetails = CradleCuddles.dataBaseHelper!!.getBabyBody()
+        if (babyBodyDetails != null) {
+            valWeight.text = babyBodyDetails.weight.toString()
+            valHeight.text = babyBodyDetails.height.toString()
+            valBloodGroup.text = babyBodyDetails.bloodGroup
+        }
     }
 
     override fun onClick(p0: View?) {
@@ -108,9 +121,43 @@ class BabyProfileFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
-    private fun showBodyEditDialog(){
-
+    private fun showBodyEditDialog() {
+        // create a Dialog component
+        val dialog = Dialog(activity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_edit_baby_body)
+        dialog.show();
+        val edtWeight = dialog.findViewById<EditText>(R.id.edtWeight)
+        val edtHeight = dialog.findViewById<EditText>(R.id.edtHeight)
+        val edtBloodGroup = dialog.findViewById<EditText>(R.id.edtBloodGroup)
+        val btnOk = dialog.findViewById<Button>(R.id.btnOk)
+        val btnCancel = dialog.findViewById<Button>(R.id.btnCancel)
+        btnOk.setOnClickListener {
+            if (TextUtils.isEmpty(edtWeight.text)) {
+                edtWeight.error = getString(R.string.PleaseEnterWeight)
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(edtHeight.text)) {
+                edtHeight.error = getString(R.string.PleaseEnterHeight)
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(edtBloodGroup.text)) {
+                edtBloodGroup.error = getString(R.string.PleaseEnterBloodGroup)
+                return@setOnClickListener
+            }
+            val babyBodyDetails = BabyBodyDetails()
+            babyBodyDetails.height = edtHeight.text.toString().toDouble()
+            babyBodyDetails.weight = edtWeight.text.toString().toDouble()
+            babyBodyDetails.bloodGroup = edtBloodGroup.text.toString()
+            CradleCuddles.dataBaseHelper!!.setBabyBody(babyBodyDetails)
+            filData()
+            dialog.dismiss()
+        }
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
     }
+
     private fun showEditInfoDialog() {
         // create a Dialog component
         val dialog = Dialog(activity)
@@ -126,17 +173,17 @@ class BabyProfileFragment : BaseFragment(), View.OnClickListener {
         val edtName = dialog.findViewById<EditText>(R.id.edtName)
         btnOk.setOnClickListener {
             if (TextUtils.isEmpty(edtName.text)) {
-                edtName.error = "Please Enter Name"
+                edtName.error = getString(R.string.PleaseEnterName)
                 return@setOnClickListener
             }
             if (TextUtils.isEmpty(edtDOB.text)) {
                 //edtDOB.error = "Please Select Date of Birth"
-                Toast.makeText(activity,"Please Select Date of Birth",Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, R.string.PleaseSelectDateofBirth, Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             if (TextUtils.isEmpty(edtTOB.text)) {
                 //edtDOB.error = "Please Select Time of Birth"
-                Toast.makeText(activity,"Please Select Time of Birth",Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, R.string.PleaseSelectTimeofBirth, Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             val babyBasicDetails: BabyBasicDetails = BabyBasicDetails()

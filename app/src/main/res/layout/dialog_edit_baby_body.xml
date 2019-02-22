@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10dp">
+
+            <EditText
+                android:id="@+id/edtWeight"
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                android:inputType="numberDecimal"
+                android:hint="@string/Weight"
+                android:textSize="@dimen/text_12sp" />
+
+            <EditText
+                android:id="@+id/edtHeight"
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:inputType="numberDecimal"
+                android:layout_marginRight="@dimen/card_margin"
+                android:hint="@string/Height"
+                android:textSize="@dimen/text_12sp" />
+
+            <EditText
+                android:id="@+id/edtBloodGroup"
+                android:layout_width="@dimen/edit_text_width"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin"
+                android:hint="@string/BloodGroup"
+                android:textSize="@dimen/text_12sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnOk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorBackgroundGray"
+                    android:text="@string/OK"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_12sp" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorBackgroundGray"
+                    android:text="@string/Cancel"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/text_12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

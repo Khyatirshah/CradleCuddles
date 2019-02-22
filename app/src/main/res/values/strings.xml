@@ -76,10 +76,17 @@
     <string name="Gallery">Gallery</string>
     <string name="Camera">Camera</string>
     <string name="RemovePhoto">Remove photo</string>
-
     <array name="gender">
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
     </array>
-</resources>
+
+    <!-- Error Messages-->
+    <string name="PleaseEnterWeight">Please Enter Weight</string>
+    <string name="PleaseEnterHeight">Please Enter Height</string>
+    <string name="PleaseEnterBloodGroup">Please Enter Blood Group</string>
+    <string name="PleaseEnterName">Please Enter Name</string>
+    <string name="PleaseSelectDateofBirth">Please Select Date of Birth</string>
+    <string name="PleaseSelectTimeofBirth">Please Select Time of Birth</string>
+    </resources>
