@@ -31,4 +31,10 @@
         <item name="android:colorForeground">@color/colorBackgroundGray
         </item>
     </style>
+
+    <!-- Textview styles-->
+    <style name="valTextview12Sp">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

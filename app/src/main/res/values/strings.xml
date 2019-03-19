@@ -14,6 +14,7 @@
     <string name="Extras">Extras</string>
     <string name="Settings">Settings</string>
     <string name="ChildProfile">Child Profile</string>
+    <string name="ChildDiet">Child Diet</string>
 
     <!-- Settings Screen-->
     <string name="ChangeLanguage">Change Language</string>
@@ -89,4 +90,14 @@
     <string name="PleaseEnterName">Please Enter Name</string>
     <string name="PleaseSelectDateofBirth">Please Select Date of Birth</string>
     <string name="PleaseSelectTimeofBirth">Please Select Time of Birth</string>
-    </resources>
+
+    <!-- Chile diet-->
+    <string name="chidDietDesc">This age-by-age short guide will help you in deciding what to feed your baby at what age during the precarious first year. These are only rough guidelines to help you. Do not stress upon feeding your baby only what and how much is mentioned here. Every baby is different and if your baby wants to have something more or less, follow baby\'s lead.</string>
+    <array name="ageChildDiet">
+        <item>Birth to 4 Months</item>
+        <item>4 to 6 Months</item>
+        <item>6 to 8 Months</item>
+        <item>8 to 10 Months</item>
+        <item>10 to 12 Months</item>
+    </array>
+</resources>

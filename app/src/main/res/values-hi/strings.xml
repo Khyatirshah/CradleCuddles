@@ -15,6 +15,7 @@
     <string name="Extras">अतिरिक्त</string>
     <string name="Settings">सेटिंग्स</string>
     <string name="ChildProfile">बच्चे की प्रोफाइल</string>
+    <string name="ChildDiet">बाल आहार</string>
 
     <!-- Settings Screen-->
     <string name="ChangeLanguage">भाषा बदलो</string>
@@ -91,4 +92,15 @@
     <string name="PleaseEnterName">कृपया नाम दर्ज करें</string>
     <string name="PleaseSelectDateofBirth">कृपया जन्म तिथि चुनें</string>
     <string name="PleaseSelectTimeofBirth">कृपया समय का चयन करें</string>
+
+    <!-- Chile diet-->
+    <string name="chidDietDesc">यह उम्र-दर-वर्ष की छोटी मार्गदर्शिका आपको यह निर्णय लेने में मदद करेगी कि पहले वर्ष के दौरान आपके बच्चे को किस उम्र में खिलाना है। ये आपकी मदद करने के लिए केवल मोटे दिशानिर्देश हैं। अपने बच्चे को केवल दूध पिलाने पर जोर न दें कि यहां क्या और कितना बताया गया है। हर बच्चा अलग होता है और अगर आपका बच्चा कम या ज्यादा चाहता है, तो बच्चे की अगुवाई करें।</string>
+    <array name="ageChildDiet">
+        <item>जन्म से 4 महीने तक</item>
+        <item>4 से 6 महीने</item>
+        <item>6 से 8 महीने</item>
+        <item>8 से 10 महीने</item>
+        <item>10 से 12 महीने</item>
+    </array>
+
 </resources>
