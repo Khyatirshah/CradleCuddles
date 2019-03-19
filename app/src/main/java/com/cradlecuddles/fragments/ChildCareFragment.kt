@@ -17,7 +17,9 @@ import kotlinx.android.synthetic.main.fragment_childcare.*
  */
 class ChildCareFragment : BaseFragment(), View.OnClickListener {
 
-    private var llVaccination: LinearLayout? = null
+    lateinit var llVaccination: LinearLayout
+    lateinit var llDiet: LinearLayout
+    lateinit var llProfile : LinearLayout
 
     override fun onResume() {
         super.onResume()
@@ -35,8 +37,10 @@ class ChildCareFragment : BaseFragment(), View.OnClickListener {
         val view = inflater!!.inflate(R.layout.fragment_childcare, container, false)
         llVaccination = view.findViewById(R.id.llVaccination)
         llVaccination!!.setOnClickListener(this)
-        val llProfile = view.findViewById<LinearLayout>(R.id.llProfile)
+        llProfile = view.findViewById<LinearLayout>(R.id.llProfile)
         llProfile!!.setOnClickListener(this)
+        llDiet = view.findViewById(R.id.llDiet)
+        llDiet.setOnClickListener(this)
         return view
     }
 
@@ -47,6 +51,7 @@ class ChildCareFragment : BaseFragment(), View.OnClickListener {
 
             R.id.llProfile -> Utils.addSubscreen(activity, BabyProfileFragment())
 
+            R.id.llDiet -> Utils.addSubscreen(activity, ChildDietFragment())
         }
     }
 }
