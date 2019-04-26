@@ -10,7 +10,7 @@ import com.cradlecuddles.MainActivity
 import com.cradlecuddles.R
 import com.cradlecuddles.Utils.Utils
 import com.cradlecuddles.foundation.BaseFragment
-import kotlinx.android.synthetic.main.fragment_childcare.*
+import com.cradlecuddles.fragments.ChildDiet.ChildDietFragment
 
 /**
  * Created by Khyati Shah on 11/19/2018.

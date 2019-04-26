@@ -20,6 +20,9 @@
     <color name="colorCardYellow">#ffdd99</color>
     <color name="colorCardPink">#ffe6f3</color>
 
-    <!-- Color navigation view-->
+    <!-- Text Color-->
+    <color name="blue">#3D59AB</color>
+    <color name="pink">#DC143C</color>
+    <color name="green">#00C78C</color>
 
 </resources>

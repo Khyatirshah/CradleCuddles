@@ -1,4 +1,4 @@
-package com.cradlecuddles.fragments
+package com.cradlecuddles.fragments.ChildDiet
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager

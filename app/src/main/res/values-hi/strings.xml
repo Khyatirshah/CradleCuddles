@@ -103,4 +103,8 @@
         <item>10 से 12 महीने</item>
     </array>
 
+    <!-- Child Diet Details-->
+    <string name="WhattoFeed">क्या खिलाना है:</string>
+    <string name="HowMuch">कितना:</string>
+    <string name="WhatNottoFeed">क्या नहीं खिलाना है:</string>
 </resources>

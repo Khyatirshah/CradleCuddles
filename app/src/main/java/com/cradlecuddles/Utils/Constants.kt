@@ -9,5 +9,6 @@ object Constants {
     val HINDI = "hi"
     val TABLE_VACCINATION = "Vaccination"
     val TABLE_BABY_PROFILE = "BabyProfile"
+    val TABLE_BABY_DIET = "BabyDiet"
     val standardDtFormat = "dd.MM.yyyy"
 }

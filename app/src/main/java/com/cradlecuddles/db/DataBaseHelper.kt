@@ -12,6 +12,7 @@ import com.cradlecuddles.Utils.Constants
 import com.cradlecuddles.Utils.Utils
 import com.cradlecuddles.models.BabyBasicDetails
 import com.cradlecuddles.models.BabyBodyDetails
+import com.cradlecuddles.models.ChildDiet
 
 import com.cradlecuddles.models.Vaccination
 
@@ -298,10 +299,36 @@ class DataBaseHelper
                 babyBodyDetails.weight = cursor.getString(5).toDouble()
                 babyBodyDetails.bloodGroup = cursor.getString(6)
             }
+            cursor.close()
         }
         return babyBodyDetails
     }
 
+    fun getChildDiet(strAge: String): ChildDiet? {
+
+        myDataBase = readableDatabase
+        val qu = "select *  from " + Constants.TABLE_BABY_DIET + " where Age = '" + "Diet for " + strAge + "'"
+        val cursor = myDataBase!!.rawQuery(qu, null)
+        var childDiet: ChildDiet? = null
+        if (cursor != null && cursor.count > 0) {
+            cursor.moveToFirst()
+            childDiet = ChildDiet()
+            if (!cursor.getString(cursor.getColumnIndex("Age")).isNullOrBlank())
+                childDiet.age = cursor.getString(cursor.getColumnIndex("Age"))
+            if (!cursor.getString(cursor.getColumnIndex("Feed")).isNullOrBlank())
+                childDiet.feed = cursor.getString(cursor.getColumnIndex("Feed"))
+            if (!cursor.getString(cursor.getColumnIndex("HowMuch")).isNullOrBlank())
+                childDiet.howMuch = cursor.getString(cursor.getColumnIndex("HowMuch"))
+            if (!cursor.getString(cursor.getColumnIndex("NotToFeed")).isNullOrBlank())
+                childDiet.notToFeed = cursor.getString(cursor.getColumnIndex("NotToFeed"))
+            if (!cursor.getString(cursor.getColumnIndex("DescBottom")).isNullOrBlank())
+                childDiet.descBottom = cursor.getString(cursor.getColumnIndex("DescBottom"))
+            if (!cursor.getString(cursor.getColumnIndex("DescTop")).isNullOrBlank())
+                childDiet.descTop = cursor.getString(cursor.getColumnIndex("DescTop"))
+            cursor!!.close()
+        }
+        return childDiet
+    }
 
     companion object {
 

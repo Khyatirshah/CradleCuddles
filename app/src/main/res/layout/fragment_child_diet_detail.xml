@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/card_margin">
+
+        <TextView
+            android:id="@+id/txtAgeDietTitile"
+            style="@style/TextStyleHeaderLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/descTop"
+            style="@style/valTextview12Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp" />
+
+        <TextView
+            android:id="@+id/txtHeaderFeed"
+            style="@style/TextStyleHeaderSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="@string/WhattoFeed"
+            android:textColor="@color/pink" />
+
+        <TextView
+            android:id="@+id/valWhtToFeed"
+            style="@style/valTextview12Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txtHeaderHowMuch"
+            style="@style/TextStyleHeaderSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="@string/HowMuch"
+            android:textColor="@color/pink" />
+
+        <TextView
+            android:id="@+id/valHowMuch"
+            style="@style/valTextview12Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txtHeaderNotFeed"
+            style="@style/TextStyleHeaderSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="@string/WhatNottoFeed"
+            android:textColor="@color/pink" />
+
+        <TextView
+            android:id="@+id/valWhatNot"
+            style="@style/valTextview12Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+
+        <TextView
+            android:id="@+id/valDesc"
+            style="@style/valTextview12Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp" />
+    </LinearLayout>
+</ScrollView>
